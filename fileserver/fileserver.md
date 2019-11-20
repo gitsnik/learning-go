@@ -1,6 +1,6 @@
 ## Serving Static Assets
 
-Technically we already have (the code)[https://gowebexamples.com/http-server/] for this, but we're going to begin as we intend to finish - tests first.
+Technically we already have [the code](https://gowebexamples.com/http-server/) for this, but we're going to begin as we intend to finish - tests first.
 
 Because we're starting to need it, we will also refactor our server code to be more robust and get most of it out of main(). We will use our tests to drive our redevelopment. First we redfine our mux calls to use a new function (setupHttpHandlers) in our existing test, and then we add a new test for static resources:
 
@@ -140,4 +140,4 @@ $
 
 #### Finishing Up
 
-This takes me to the end of (the code)[https://gowebexamples.com/http-server/]. Hardening has been built in with new middleware and we've reduced a bit of duplication. Static file delivery will allow us to automatically deploy CSS, JS, and even JSON extensions as needed.
+This takes me to the end of [the code](https://gowebexamples.com/http-server/). Hardening has been built in with new middleware and we've reduced a bit of duplication. Static file delivery will allow us to automatically deploy CSS, JS, and even JSON extensions as needed.
