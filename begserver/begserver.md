@@ -45,4 +45,4 @@ Moving on to hardening our build
 
 ### Hardening the beginning server
 
-[Hardening Beginning Server](begserverhardened.md)
+[Hardening Beginning Server](/begserver/hardened/begserverhardened.md)
