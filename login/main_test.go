@@ -146,6 +146,7 @@ func TestSecret(t *testing.T) {
 			name:      "Secret permits secure cookie",
 			path:      "/secret",
 			code:      200,
+			method:    "GET",
 			expected:  "You found it!",
 			usecookie: true,
 		},
@@ -177,8 +178,8 @@ func TestSecret(t *testing.T) {
 
 			writer := httptest.NewRecorder()
 
-			request, _ := http.NewRequest(tc.method, tc.path, nil)
-			if tc.method == "POST" {
+			request, _ := http.NewRequest("GET", tc.path, nil)
+			if tc.method != "GET" {
 				p.ServeHTTP(writer, request)
 
 				request, _ = http.NewRequest(tc.method, tc.path, tc.data)
@@ -187,7 +188,6 @@ func TestSecret(t *testing.T) {
 
 				writer = httptest.NewRecorder()
 
-				request, _ = http.NewRequest(tc.method, tc.path, tc.data)
 				request.Header.Set("Content-Type", "application/x-www-form-urlencoded; param=value")
 			}
 
@@ -195,7 +195,7 @@ func TestSecret(t *testing.T) {
 				t.Logf("Using cookie %v", cookie)
 				request.Header.Set("Cookie", cookie)
 			}
-			mux.ServeHTTP(writer, request)
+			p.ServeHTTP(writer, request)
 
 			testSecurityHeaders(t, writer)
 

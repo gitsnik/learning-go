@@ -46,8 +46,8 @@ t.Run(tc.name, func(t *testing.T) {
   })))
 
   ...
-
-			if tc.method == "POST" {
+            request, _ := http.NewRequest("GET", tc.path, nil)
+			if tc.method != "GET" {
 				p.ServeHTTP(writer, request)
 
 				request, _ = http.NewRequest(tc.method, tc.path, tc.data)
@@ -59,6 +59,8 @@ t.Run(tc.name, func(t *testing.T) {
 				request, _ = http.NewRequest(tc.method, tc.path, tc.data)
 				request.Header.Set("Content-Type", "application/x-www-form-urlencoded; param=value")
 			}
+...
+			p.ServeHTTP(writer, request)
 ```
 
 If we were to stop here we would have an interesting situation, because our tests are now actually more secure than our main program. Let's remedy that inside the setupHttpHandlers function, and add some extra handling of the CsrfField we will need for our form
