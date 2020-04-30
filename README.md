@@ -9,7 +9,7 @@ We're going to build a generic framework for logging in as a user to a public ar
 - [x] X-Clacks-Overhead everywhere
 - [x] Deliver static files such as CSS and JS
 - [x] Deliver HTML based on programmed templates
-- [ ] Log in functionality
+- [x] Log in functionality
 - [ ] Log out functionality
 - [ ] RBAC: Public
 - [ ] RBAC: Authenticated
@@ -36,3 +36,8 @@ After I know enough to do all of these things, I will probably abandon the proje
 ## HTML Templates
 
 1. [HTML Templates](templates/templates.md)
+
+## Log in functionality
+
+1. [Login Functionality - Not yet secure](login/login.md)
+2. [Login Functionality - More secure](login/logincsrf.md)
