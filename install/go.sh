@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-GOZIP="go1.13.4.linux-amd64.tar.gz"
+GOZIP="go1.14.1.linux-amd64.tar.gz"
 DLDIR="/vagrant/install/"
 
 GOURL="https://dl.google.com/go/${GOZIP}"
