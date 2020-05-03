@@ -10,7 +10,7 @@ We're going to build a generic framework for logging in as a user to a public ar
 - [x] Deliver static files such as CSS and JS
 - [x] Deliver HTML based on programmed templates
 - [x] Log in functionality
-- [ ] Log out functionality
+- [x] Log out functionality
 - [ ] RBAC: Public
 - [ ] RBAC: Authenticated
 - [ ] RBAC: Administrator
@@ -41,3 +41,7 @@ After I know enough to do all of these things, I will probably abandon the proje
 
 1. [Login Functionality - Not yet secure](login/login.md)
 2. [Login Functionality - More secure](login/logincsrf.md)
+
+## Log out functionality
+
+1. [Logout Functionality](logout/logout.md)

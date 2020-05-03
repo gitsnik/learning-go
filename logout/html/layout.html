@@ -1,0 +1,15 @@
+<html>
+  <head></head>
+  <body>
+    <p>
+Hello, you've requested: {{.RequestPath}}
+    </p>
+    {{ if ne .User "" }}
+    <a href="/logout">Logout</a>
+    {{ else }}
+    <a href="/login">Login</a>
+    {{ end }}
+    <br/>
+    <a href="/secret">Secret</a>
+  </body>
+</html>
